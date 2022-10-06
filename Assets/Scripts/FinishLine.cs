@@ -20,4 +20,5 @@ public class FinishLine : MonoBehaviour
 
         _gameManager.LoadNextLevel();
     }
+    
 }

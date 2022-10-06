@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Collider2D playerCollider;
     [SerializeField] private PlayerAnimatorController animatorController;
+    [SerializeField] private PlayerAudioController audioController;
 
     [Header("Player Values")] 
     [SerializeField] private float movementSpeed = 3f;
@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Jump(jumpForce);
+        audioController.PlayJumpSound();
     }
 
     public void Jump(float force, float additionalTimeWait = 0f)
@@ -135,6 +136,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         _gameManager.ProcessPlayerDeath();
+        audioController.PlayDeathSound();
     }
     
     #endregion
