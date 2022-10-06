@@ -15,6 +15,7 @@ public class FinishLine : MonoBehaviour
     private void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        
     }
     
     private void OnTriggerEnter2D(Collider2D col)
