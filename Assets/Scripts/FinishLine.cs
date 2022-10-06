@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip finishgateAudioClip;
+    
     private const string PlayerTag = "Player";
 
     private GameManager _gameManager;
@@ -19,6 +22,8 @@ public class FinishLine : MonoBehaviour
         if (!col.CompareTag(PlayerTag)) return;
 
         _gameManager.LoadNextLevel();
+        
+        audioSource.PlayOneShot(finishgateAudioClip);
     }
     
 }
