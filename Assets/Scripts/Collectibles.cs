@@ -5,6 +5,8 @@ public class Collectibles : MonoBehaviour
     [SerializeField] private CollectibleSpawner collectibleSpawner;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SoCollectibles collectibleObject;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip spriteAudioClip;
     
     private CollectibleType _collectibleType;
     private bool _isRespawnable;
@@ -32,5 +34,6 @@ public class Collectibles : MonoBehaviour
         spriteRenderer.sprite = collectibleObject.GetSprite();
         _collectibleType = collectibleObject.GetCollectibleType();
         _isRespawnable = collectibleObject.GetRespawnable();
+        audioSource.PlayOneShot(spriteAudioClip);
     }
 }

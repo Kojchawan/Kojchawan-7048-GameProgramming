@@ -127,6 +127,8 @@ MonoBehaviour:
   collectibleSpawner: {fileID: 4589842918133577196}
   spriteRenderer: {fileID: 6828238283503054166}
   collectibleObject: {fileID: 11400000, guid: 9682f034374b9d2498df04815592f42a, type: 2}
+  audioSource: {fileID: 0}
+  spriteAudioClip: {fileID: 8300000, guid: a65c074913035404791334a5c8e9f1c4, type: 3}
 --- !u!1 &8571762190874291831
 GameObject:
   m_ObjectHideFlags: 0

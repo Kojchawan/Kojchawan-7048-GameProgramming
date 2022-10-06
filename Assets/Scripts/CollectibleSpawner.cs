@@ -6,6 +6,8 @@ public class CollectibleSpawner : MonoBehaviour
     // This script is to handle the respawning of the collectible as a disabled gameObject cannot run any methods or coroutines on its own.
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject collectibleGameObject;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip spriteAudioClip;
     
     [Header("Collectible Settings")]
     [SerializeField] private float respawnTime = 4f;
@@ -20,6 +22,7 @@ public class CollectibleSpawner : MonoBehaviour
     private void SetOutlineSpriteActive(bool state)
     {
         spriteRenderer.enabled = state;
+        audioSource.PlayOneShot(spriteAudioClip);
     }
 
     public void SetOutlineSprite(Sprite sprite)
